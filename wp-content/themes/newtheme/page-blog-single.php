@@ -87,7 +87,7 @@
 								</div>
 								<ul class="children">
 									<li class="comment">
-										<div class="avatar"><img alt="" src="images/avatar-03.jpg" class="avatar"></div>
+										<div class="avatar"><img alt="" src="<?php echo get_bloginfo('template_url') ?>/assets/images/avatar-03.jpg" class="avatar"></div>
 										<div class="comment-container">
 											<h5 class="comment-author"><a href="#">Thomas Smith</a></h5>
 											<div class="comment-meta"><a href="#" class="comment-date link-style1">February 14, 2015</a><a class="comment-reply-link link-style3" href="#respond">Reply »</a></div>
