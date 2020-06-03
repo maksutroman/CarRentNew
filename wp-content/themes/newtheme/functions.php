@@ -35,7 +35,10 @@ add_action('after_setup_theme', 'theme_register_nav_menu');
 function theme_register_nav_menu()
 {
     register_nav_menu('primary2', 'Primary Menu');
+    register_nav_menu('Dropdown Blog', 'Secondary Menu');
 }
+
+
 
 # Added classes for main menu
 function special_nav_class($classes, $item)
@@ -68,3 +71,10 @@ function atg_menu_classes($classes, $item, $args)
     return $classes;
 }
 add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
+
+add_filter('comment_form_default_fields', 'tu_comment_form_hide_cookies_consent');
+function tu_comment_form_hide_cookies_consent($fields)
+{
+    unset($fields['cookies']);
+    return $fields;
+}

@@ -30,7 +30,9 @@
 					<div class="col-lg-4 col-md-6 col-12">
 						<div class="blog-item">
 							<div class="image-blog">
-								<img class="img-fluid" src=<?php the_post_thumbnail(); ?>>
+								<a href="<?php the_permalink(); ?>">
+									<img class="img-fluid" src="<?php the_post_thumbnail(); ?>">
+								</a>
 							</div>
 							<div class=" meta-info-blog">
 								<span class="fa fa-calendar"> <a href="#"><?php echo get_the_date(); ?> </a></span>

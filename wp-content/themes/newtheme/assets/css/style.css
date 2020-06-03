@@ -3830,17 +3830,6 @@ a.link-style3 {
 .course-meta-bot ul li:hover {
   color: #eea412;
 }
-
-/* .nav-link {
-  display: block;
-  width: 100%;
-  padding: 0.25rem 1.5rem;
-  clear: both;
-  font-weight: 400;
-  color: #212529;
-  text-align: inherit;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0;
-
-} */
+p.comment-form-cookies-consent {
+  display: none;
+}
