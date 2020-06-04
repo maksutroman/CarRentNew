@@ -9,20 +9,18 @@
 <div id="overviews" class="section wb">
   <div class="container">
     <div class="row">
-      <div class="col-lg-9 blog-post-single">
-        <?php
-        if (have_posts()) {
-          while (have_posts()) {
-            the_post();
-            global $post;
-            $author_ID = $post->post_author;
-            $author_URL = get_author_posts_url($author_ID);
-
-
-        ?>
+      <?php
+      if (have_posts()) {
+        while (have_posts()) {
+          the_post();
+          global $post;
+          $author_ID = $post->post_author;
+          $author_URL = get_author_posts_url($author_ID);
+      ?>
+          <div class="col-lg-9 blog-post-single">
             <div class="blog-item">
               <div class="image-blog">
-                <img class="img-fluid" src=<?php the_post_thumbnail(); ?>>
+                <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid', 'title' => 'Feature image']); ?>
               </div>
 
               <div class="post-content">
@@ -48,8 +46,11 @@
                 <p>Phasellus tristique commodo libero, eget dignissim turpis dignissim quis. Morbi sit amet laoreet nibh, gravida scelerisque felis. Phasellus ultrices pellentesque ligula et viverra. Integer elementum, risus et tempor ultricies, libero turpis pellentesque massa, at facilisis erat nunc hendrerit erat. Praesent rhoncus, augue nec condimentum porta, magna dui volutpat augue, vitae blandit magna quam in massa. Fusce a rhoncus diam. Proin nec lacinia nibh. Praesent sed nisi sed purus dictum laoreet.</p>
                 <p>Duis at tortor augue. Ut et justo consequat, facilisis lectus facilisis, tincidunt massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam vel vestibulum urna. Fusce sed magna posuere, vehicula odio vitae, tempor arcu. Pellentesque eget felis sed eros maximus elementum ultrices a elit. Sed ac sodales enim.</p>
               </div>
+          <?php
+        }
+      }
+          ?>
             </div>
-
 
 
             <div class="blog-author">
@@ -70,63 +71,60 @@
               </div>
             </div>
 
-        <?php
-          }
-        }
-        ?>
-
-        <?php
-        if (comments_open() || get_comments_number()) {
-          comments_template();
-        }
-        ?>
 
 
-      </div>
-    </div><!-- end col -->
-    <div class="col-lg-3 right-single">
-      <div class="widget-search">
-        <div class="site-search-area">
-          <form method="get" id="site-searchform" action="#">
-            <div>
-              <input class="input-text form-control" name="search-k" id="search-k" placeholder="Search keywords..." type="text">
-              <input id="searchsubmit" value="Search" type="submit">
+            <?php
+            if (comments_open() || get_comments_number()) {
+              comments_template();
+            }
+            ?>
+
+
+
+          </div><!-- end col -->
+          <div class="col-lg-3 right-single">
+            <div class="widget-search">
+              <div class="site-search-area">
+                <form method="get" id="site-searchform" action="#">
+                  <div>
+                    <input class="input-text form-control" name="search-k" id="search-k" placeholder="Search keywords..." type="text">
+                    <input id="searchsubmit" value="Search" type="submit">
+                  </div>
+                </form>
+              </div>
             </div>
-          </form>
-        </div>
-      </div>
-      <div class="widget-categories">
-        <h3 class="widget-title">Categories</h3>
-        <ul>
-          <li><a href="#">Political Science</a></li>
-          <li><a href="#">Business Leaders Guide</a></li>
-          <li><a href="#">Become a Product Manage</a></li>
-          <li><a href="#">Language Education</a></li>
-          <li><a href="#">Micro Biology</a></li>
-          <li><a href="#">Social Media Management</a></li>
-        </ul>
-      </div>
-      <div class="widget-tags">
-        <h3 class="widget-title">Search Tags</h3>
-        <ul class="tags">
-          <li><a href="#"><b>business</b></a></li>
-          <li><a href="#"><b>jquery</b></a></li>
-          <li><a href="#">corporate</a></li>
-          <li><a href="#">portfolio</a></li>
-          <li><a href="#">css3</a></li>
-          <li><a href="#"><b>theme</b></a></li>
-          <li><a href="#"><b>html5</b></a></li>
-          <li><a href="#"><b>mysql</b></a></li>
-          <li><a href="#">multipurpose</a></li>
-          <li><a href="#">responsive</a></li>
-          <li><a href="#">premium</a></li>
-          <li><a href="#">javascript</a></li>
-          <li><a href="#"><b>Best jQuery</b></a></li>
-        </ul>
-      </div>
-    </div>
-  </div><!-- end row -->
-</div><!-- end container -->
+            <div class="widget-categories">
+              <h3 class="widget-title">Categories</h3>
+              <ul>
+                <li><a href="#">Political Science</a></li>
+                <li><a href="#">Business Leaders Guide</a></li>
+                <li><a href="#">Become a Product Manage</a></li>
+                <li><a href="#">Language Education</a></li>
+                <li><a href="#">Micro Biology</a></li>
+                <li><a href="#">Social Media Management</a></li>
+              </ul>
+            </div>
+            <div class="widget-tags">
+              <h3 class="widget-title">Search Tags</h3>
+              <ul class="tags">
+                <li><a href="#"><b>business</b></a></li>
+                <li><a href="#"><b>jquery</b></a></li>
+                <li><a href="#">corporate</a></li>
+                <li><a href="#">portfolio</a></li>
+                <li><a href="#">css3</a></li>
+                <li><a href="#"><b>theme</b></a></li>
+                <li><a href="#"><b>html5</b></a></li>
+                <li><a href="#"><b>mysql</b></a></li>
+                <li><a href="#">multipurpose</a></li>
+                <li><a href="#">responsive</a></li>
+                <li><a href="#">premium</a></li>
+                <li><a href="#">javascript</a></li>
+                <li><a href="#"><b>Best jQuery</b></a></li>
+              </ul>
+            </div>
+          </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
 </div><!-- end section -->
 
 

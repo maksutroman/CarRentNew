@@ -3833,3 +3833,12 @@ a.link-style3 {
 p.comment-form-cookies-consent {
   display: none;
 }
+
+.post-categories {
+  display: inline-block;
+  padding-left: 2px;
+  list-style: none;
+}
+.post-categories > li > a {
+  color: #eea412;
+}

@@ -78,3 +78,16 @@ function tu_comment_form_hide_cookies_consent($fields)
     unset($fields['cookies']);
     return $fields;
 }
+
+add_filter('comments_number', 'wporg_com_num', 10, 2);
+function wporg_com_num($out, $num)
+{ // Two parameter as in filter described
+    if (0 === $num) {
+        $out = 'Comments (0)'; // If No comments
+    } elseif (1 === $num) {
+        $out = 'Comment (1)'; // If 1 comment
+    } else {
+        $out = 'Comments ' . '(' . $num . ')'; // More than 1 comment
+    }
+    return $out;
+}

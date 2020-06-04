@@ -31,13 +31,13 @@
 						<div class="blog-item">
 							<div class="image-blog">
 								<a href="<?php the_permalink(); ?>">
-									<img class="img-fluid" src="<?php the_post_thumbnail(); ?>">
+									<?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid', 'title' => 'Feature image']); ?>
 								</a>
 							</div>
-							<div class=" meta-info-blog">
-								<span class="fa fa-calendar"> <a href="#"><?php echo get_the_date(); ?> </a></span>
-								<span><i class="fa fa-tag"></i> <a href="#">News</a> </span>
-								<span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>
+							<div class="meta-info-blog">
+								<span><i class="fa fa-calendar"></i> <a href="#"><?php echo get_the_date() ?> </a> </span>
+								<span><i class="fa fa-tag"></i> <?php the_category();   ?></span>
+								<span><i class="fa fa-comments"></i> <a href="#"><?php echo get_comments_number(); ?> Comments</a></span>
 							</div>
 							<div class="blog-title">
 								<h2><a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a></h2>
