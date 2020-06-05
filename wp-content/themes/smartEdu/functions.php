@@ -91,3 +91,10 @@ function wporg_com_num($out, $num)
     }
     return $out;
 }
+
+function show_post($path)
+{
+    $post = get_page_by_path($path);
+    $content = apply_filters('the_excerpt', $post->post_content);
+    echo $content;
+}
